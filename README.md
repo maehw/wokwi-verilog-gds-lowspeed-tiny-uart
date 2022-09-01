@@ -73,7 +73,7 @@ The design uses all 8 output pins...
 
 I am a bit late to the party. I've started to think about the design on August, 31st - and submission deadline is already one day later on September, 1st.
 
-🔲 Describe the design idea
+☑️ Describe the design idea
 
 ☑️ Implement the design idea using Wokwi
 
@@ -85,9 +85,9 @@ I am a bit late to the party. I've started to think about the design on August, 
 
 ☑️ Describe the signal mapping to the ASIC hardware I/O pins/ Wokwi user interface in the simulation
 
-🔲 Share your GDS on twitter, tag it #tinytapeout and [@matthewvenn](https://twitter.com/matthewvenn)!
+☑️ Share your GDS on twitter, tag it #tinytapeout and [@matthewvenn](https://twitter.com/matthewvenn)!
 
-🔲 [Submit it to be made](https://docs.google.com/forms/d/e/1FAIpQLSc3ZF0AHKD3LoZRSmKX5byl-0AzrSK8ADeh0DtkZQX0bbr16w/viewform?usp=sf_link)
+☑️ [Submit it to be made](https://docs.google.com/forms/d/e/1FAIpQLSc3ZF0AHKD3LoZRSmKX5byl-0AzrSK8ADeh0DtkZQX0bbr16w/viewform?usp=sf_link)
 
 ☑️ [Join the community](https://discord.gg/rPK2nSjxy8)
 
