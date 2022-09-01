@@ -22,33 +22,31 @@ When the action is complete, you can [click here](https://github.com/mattvenn/wo
 * runs/wokwi/reports/synthesis/1-synthesis.stat.rpt.strategy4 - list of the [standard cells](https://www.zerotoasiccourse.com/terminology/standardcell/) used by your design
 * runs/wokwi/results/final/gds/user_module.gds - the final [GDS](https://www.zerotoasiccourse.com/terminology/gds2/) file needed to make your design
 
+
 # What is this specific design about?
 
-...
+The design implements a 300 baud UART transmitter with limited character set (0x40..0x5F) loading. Both limitations are described in a separate section below.
 
+The 300 baud is a theoretical value as the limited clock rate as stated in the [TinyTapeout FAQ](https://docs.google.com/document/d/1HeUJ5RWxnGo36LE1jp5CoCfBO91wTzGANzlKC_vVfFI/):
 
-## Input signals
+>What is the top clock speed?
+>Not sure yet, I would like to get around 100kHz but with the current scan chain and 500 designs it’s looking more like 750Hz. TBD. We have a built in clock divider that can further reduce this speed down to 2Hz.
 
-...
-
-## Output signals
-
-...
-
-## The Logic
-...
-
-
-## Limitiations of the implementation
-
-...
+I am not sure if the actual baud rate will differ.
 
 
 ### Input pins
 
 The design uses all 8 input pins:
 
-...
+* IN0: 300 Hz input clock signal (defining the baudrate)
+* IN1: bit b0 (the least significant bit) of the loaded and transmitted character (b0)
+* IN2: bit b1 of the loaded and transmitted character (b1)
+* IN3: bit b1 of the loaded and transmitted character (b2)
+* IN4: bit b1 of the loaded and transmitted character (b3)
+* IN5: bit b1 of the loaded and transmitted character (b4)
+* IN6: load word into shift register from parallel input (IN1..IN5) or cycle
+* IN7: output enable (for gated output signals)
 
 
 ### Output pins
@@ -64,6 +62,11 @@ The design uses all 8 output pins...
 * OUT4: UART (MSBit, gated by enable signal); *typically set to 1 or can be used to sniffing the word cycling through the shift register)*
 * OUT5: UART (MSBit, reverse polarity, gated by enable signal); *same usage as above*
 
+
+## Limitiations of the implementation
+
+* The low baud rate.
+* The limited character set of 0x40..0x5F (i.e. capital letters `A`..`Z`, and special printable characters `@`[\]^_`) have been chose arbitrarily to allow human-readable characters. This is because the message encoding has been limited to 5 bits (only 5 data input pins plus 3 control input pins). That means that the characters' three most significant bits are fixed to `0b010`. This results in words being `0b010X'XXXX`, i.e. between `0b0100'0000` (=`0x40`) and `0b0101'1111` (=`0x5F`).
 
 
 # Status/TODOs
