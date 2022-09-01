@@ -45,8 +45,8 @@ The design uses all 8 input pins:
 * IN3: bit b1 of the loaded and transmitted character (b2)
 * IN4: bit b1 of the loaded and transmitted character (b3)
 * IN5: bit b1 of the loaded and transmitted character (b4)
-* IN6: load word into shift register from parallel input (IN1..IN5) or cycle
-* IN7: output enable (for gated output signals)
+* IN6: load word into shift register from parallel input (IN1..IN5) (`1`) or cycle the existing word with start/stop bits around it (`0`)
+* IN7: output enable (for gated output signals): `1` output is enabled, `0` output is disabled (permanently set to HIGH/`1`)
 
 
 ### Output pins
