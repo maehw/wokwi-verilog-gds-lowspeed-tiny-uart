@@ -105,7 +105,7 @@ When a word has been transmitted, it will be transmitted again and again until a
 ## Limitiations of the implementation
 
 * The low baud rate of 300 symbols/second, i.e. 300 bits/second. *(I think that this is an external constraint which cannot be fixed easily. Unless one might be able to implement a PLL or something...)*
-* The limited character set of 0x40..0x5F (i.e. capital letters `A`..`Z`, and special printable characters `@`[\]^_`) have been chose arbitrarily to allow human-readable characters. This is because the message encoding has been limited to 5 bits (only 5 data input pins plus 3 control input pins). That means that the characters' three most significant bits are fixed to `0b010`. This results in words being `0b010X'XXXX`, i.e. between `0b0100'0000` (=`0x40`) and `0b0101'1111` (=`0x5F`).
+* The limited character set of 0x40..0x5F (i.e. capital letters `A`..`Z`, and special printable characters ``@`[\]^_``) have been chose arbitrarily to allow human-readable characters. This is because the message encoding has been limited to 5 bits (only 5 data input pins plus 3 control input pins). That means that the characters' three most significant bits are fixed to `0b010`. This results in words being `0b010X'XXXX`, i.e. between `0b0100'0000` (=`0x40`) and `0b0101'1111` (=`0x5F`).
 
 
 # Status/TODOs
