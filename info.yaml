@@ -16,7 +16,7 @@ project:
   clock_hz:     300     # Clock frequency in Hz (not sure if the design supports such a "high" value! could be even higher if technically possible! the clock rate defines the UART baudrate)
   language:     "wokwi"
   wokwi_id:     341631511790879314
-  picture:      "https://user-images.githubusercontent.com/6305922/188118935-462412b2-4f26-4b63-ae8d-aac4dac185e6.png" # relative path to a picture in your repository; TODO/FIXME: not part of the repo; no relative path!
+  picture:      "wokwi-simulation-io-mapping.png" # relative path to a picture in your repository
   inputs:
     - 300 Hz input clock signal (or different value supported by the whole #tinytapeout design! defining the baudrate of the UART transmitter)
     - bit b0 (the least significant bit) of the loaded and transmitted character
