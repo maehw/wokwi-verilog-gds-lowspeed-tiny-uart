@@ -67,7 +67,7 @@ The design uses all 8 output pins...
 
 The heart of the design is a 13 bit shift register (built from D flip-flops).
 
-![wokwi-simulation](https://user-images.githubusercontent.com/6305922/188118935-462412b2-4f26-4b63-ae8d-aac4dac185e6.png)
+![wokwi-simulation](./wokwi-simulation-io-mapping.png)
 
 Why 13 bits? The UART transmitter is meant to use 8N1 configuration, where the 8N1 stands for ...
 
